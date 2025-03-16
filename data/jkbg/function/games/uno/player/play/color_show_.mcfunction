@@ -1,0 +1,1 @@
+$item replace entity @s hotbar.8 with $(color)_wool[custom_data={jkbg:["uno","color"]},custom_name='[{"text": "[","color": "white","italic": false},{"keybind": "key.swapOffhand"},"] ",{"text": "切换颜色","color": "$(color)"}]',lore=['{"text": "在出黑牌前切换。","color": "gray","italic": false}']]
