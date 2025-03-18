@@ -16,7 +16,8 @@ execute unless score #uno.yes jkbg.int matches 1 unless score #uno.play.color jk
 execute unless score #uno.yes jkbg.int matches 1 unless score #uno.play.color jkbg.int matches 5 unless score #uno.id.num jkbg.int matches 12..13 if score #uno.play.color jkbg.int = #uno.id.color jkbg.int run function jkbg:games/uno/player/play/yes
 # 万能牌
 execute if score #uno.play jkbg.int matches 513 run function jkbg:games/uno/player/play/color_use
-execute if score #uno.play jkbg.int matches 514 if score #uno.id.num jkbg.int matches 12 run function jkbg:games/uno/player/play/no
+execute if score #uno.play jkbg.int matches 514 if score #uno.id.num jkbg.int matches 12 if score #uno.cards.add jkbg.int matches 1.. run function jkbg:games/uno/player/play/no
+execute if score #uno.play jkbg.int matches 514 if score #uno.id.num jkbg.int matches 12 if score #uno.cards.add jkbg.int matches 0 run function jkbg:games/uno/player/play/color_use
 execute if score #uno.play jkbg.int matches 514 unless score #uno.id.num jkbg.int matches 12 run function jkbg:games/uno/player/play/color_use
 execute if score #uno.play jkbg.int matches 500 run function jkbg:games/uno/player/play/draw
 
