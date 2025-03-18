@@ -15,6 +15,8 @@ execute store result score #uno.cards jkbg.int run data get storage jkbg:uno car
 
 # 开始
 scoreboard objectives setdisplay sidebar jkbg.uno.order
+scoreboard objectives setdisplay below_name jkbg.uno.cards
+scoreboard objectives setdisplay list jkbg.uno.cards
 scoreboard players reset #uno.cards.add jkbg.int
 scoreboard players reset #uno.draw.test jkbg.int
 scoreboard players reset #uno.reverse jkbg.int
@@ -33,7 +35,7 @@ scoreboard players reset #temp jkbg.int
 execute as @a[scores={jkbg.player.gametype=1,jkbg.player.state=1},sort=random] store result score @s jkbg.uno.order run scoreboard players add #temp jkbg.int 1
 
 # 桌子
-execute align xyz positioned ~.5 ~-1 ~4.5 run function jkbg:games/uno/table
+execute align xyz positioned ~.5 ~-1 ~.5 run function jkbg:games/uno/table
 
 # 系统出牌
 function jkbg:games/uno/draw

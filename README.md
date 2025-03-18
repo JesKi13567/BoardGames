@@ -4,6 +4,8 @@
 
 使用 `/function #load` 或 `/reload` 加载。
 
+本数据包尚未完善，请在新的存档中使用！
+
 ## 游戏列表
 
 ### UNO (gametype #1)
