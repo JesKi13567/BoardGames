@@ -2,6 +2,7 @@
 scoreboard players set #load jkbg.int 1
 scoreboard players set #-1 jkbg.int -1
 scoreboard players set #100 jkbg.int 100
+scoreboard players set #uno.state jkbg.int 0
 
 scoreboard objectives add jkbg.entity.Y dummy "实体高度"
 
@@ -15,7 +16,7 @@ scoreboard objectives add jkbg.player.death deathCount "死亡接口"
 scoreboard objectives add jkbg.player.leave_game custom:leave_game "玩家离开游戏接口"
 
 # uno
-scoreboard objectives add jkbg.uno.order dummy "玩家游戏顺序"
+scoreboard objectives add jkbg.uno.order dummy "UNO游戏顺序"
 scoreboard objectives add jkbg.uno.draw dummy "玩家抓了牌"
 scoreboard objectives add jkbg.uno.turn dummy "玩家回合"
 scoreboard objectives add jkbg.uno.color dummy "玩家选择颜色"

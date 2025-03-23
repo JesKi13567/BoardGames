@@ -4,4 +4,4 @@ execute as @a[scores={jkbg.player.leave_game=1..}] run function jkbg:games/lobby
 execute as @a[scores={jkbg.player.use=1..}] run function jkbg:games/lobby/use
 execute as @a[scores={jkbg.player.drop=1..}] run function jkbg:games/lobby/drop
 
-function jkbg:games/uno/global
+function jkbg:games/uno/ticks/t1

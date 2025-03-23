@@ -1,9 +1,9 @@
 # 玩家初始抓牌
 scoreboard players set #uno.cards.add jkbg.int 6
-function jkbg:games/uno/player/play/draw
+function jkbg:games/uno/draw/player_loop
 
 # 手动玩家刷新
-execute as @a[scores={jkbg.player.gametype=1,jkbg.player.state=1}] if score @s jkbg.uno.order = #uno.order jkbg.int run function jkbg:games/uno/player/refresh
+execute as @a[scores={jkbg.player.gametype=1,jkbg.player.state=1}] if score @s jkbg.uno.order = #uno.order jkbg.int run function jkbg:games/uno/player/inventory/playing
 function jkbg:games/uno/next
 
 # 循环
