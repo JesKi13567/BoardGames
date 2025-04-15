@@ -1,15 +1,18 @@
-# 调整用按钮/背包（村规）
-# 结束名次规则
-# A 一人出完，结算所有人分数 B 所有人出完，按顺序
-# +2+4分别叠加、混合叠加（仅+2->+4）
-# 是否需要喊uno（若不喊或喊错需摸两张）
-# 能否抢牌
-# 能否对牌（出完全一样的两张牌）
-# 最后一张能否功能牌
-# 7（此人对任意其他人）、0（所有人依次）换牌（暂时不写）
+scoreboard players set @s jkbg.player.state 0
+scoreboard players set @s jkbg.player.gametype 1
+title @s times 0 2s 0
+title @s title ""
+title @s subtitle ""
 
-# 卡牌能否轮回
-execute unless score #uno.rule.samsara jkbg.int matches 1 run item replace entity @s inventory.10 with apple[custom_data={jkbg:["uno","rule","samsara"]},custom_name='[{"text": "卡牌轮回","color": "green","italic": false}]',lore=['[{"text": "当前：","italic": false},{"text": "未启用","color": "red"}]']]
-execute if score #uno.rule.samsara jkbg.int matches 1 run item replace entity @s inventory.10 with golden_apple[custom_data={jkbg:["uno","rule","samsara"]},custom_name='[{"text": "卡牌轮回","color": "green","italic": false}]',lore=['[{"text": "当前：","italic": false},{"text": "已启用","color": "gold"}]']]
+# 游戏准备提示
+title @s[scores={jkbg.player.ready=0}] actionbar ["", {"text": "望天准备游玩，看地取消准备！ 当前游戏：", "color": "gold"}, "UNO"]
+title @s[scores={jkbg.player.ready=1}] actionbar ["UNO", {"text": " 已准备人数：", "color": "green"}, {"score": {"name": "#uno.players", "objective": "jkbg.int"}, "color": "gold"}]
 
-scoreboard players set @s jkbg.player.temp 1
+execute if score #uno.countdown jkbg.int matches 1.. run title @s[scores={jkbg.player.ready=1}] subtitle [{"text": "倒计时：", "color": "green"}, {"score": {"name": "#uno.countdown", "objective": "jkbg.int"}, "color": "gold"}]
+
+# 一次性提示
+tellraw @s[scores={jkbg.player.ready=0},x_rotation=-90..-89] ["", {"text": "【JKの桌游】", "color": "green"}, {"text": "你参加了 UNO 游戏，游戏规则：\n总人数2~10，保持和上家的牌颜色/数字/功能一致即可打出，否则抓牌。", "color": "yellow"}, {"text": "\n中途离开会直接结束游戏，输入/trigger jkbg.leave。", "color": "white"}]
+tellraw @s[scores={jkbg.player.ready=1},x_rotation=89..90] ["", {"text": "【JKの桌游】", "color": "green"}, {"text": "你已取消游玩 UNO。", "color": "yellow"}]
+
+scoreboard players set @s[x_rotation=-90..-89] jkbg.player.ready 1
+scoreboard players set @s[x_rotation=89..90] jkbg.player.ready 0

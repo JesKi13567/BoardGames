@@ -1,0 +1,17 @@
+{
+    "criteria": {
+        "jkbg": {
+            "trigger": "using_item",
+            "conditions": {
+                "item": {
+                    "items": [
+                        "paper"
+                    ]
+                }
+            }
+        }
+    },
+    "rewards": {
+        "function": "jkbg:games/lobby/using"
+    }
+}

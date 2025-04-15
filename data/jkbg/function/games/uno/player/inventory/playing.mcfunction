@@ -1,8 +1,7 @@
 # 丢出物品、使用卡牌、抓牌 -> 刷新
-execute as @s[scores={jkbg.uno.draw=1}] run tellraw @a[scores={jkbg.player.gametype=1,jkbg.player.state=1}] ["",{"text": "【JKの桌游】","color": "green"}," ",{"selector": "@s","color": "gold"}," ",{"text": "选择了抓牌...","color": "gray"}]
+execute as @s[scores={jkbg.uno.draw=1}] run tellraw @a[scores={jkbg.player.gametype=1, jkbg.player.state=1}] ["", {"text": "【JKの桌游】", "color": "green"}, " ", {"selector": "@s", "color": "gold"}, " ", {"text": "选择了抓牌...", "color": "gray"}]
 clear @s
-item replace entity @s weapon.offhand with warped_fungus_on_a_stick[custom_data={jkbg:["uno","use"]},custom_name='[{"text": "[","color": "white","italic": false},{"keybind": "key.use"},"] ",{"text": "出牌","color": "yellow"}]']
-item replace entity @s hotbar.7 with paper[custom_data={jkbg:["uno","draw"]},custom_model_data=500,custom_name='[{"text": "[","color": "white","italic": false},{"keybind": "key.use"},"] ",{"text": "抓牌","color": "yellow"}]',lore=['{"text": "抓牌即放弃本回合出牌。","color": "gray","italic": false}']]
+item replace entity @s hotbar.7 with paper[custom_data={jkbg:["uno", "draw"]}, custom_model_data=500, food={can_always_eat: true, eat_seconds: 100000, nutrition: 0, saturation: 0}, custom_name='[{"text": "[", "color": "white", "italic": false}, {"keybind": "key.use"}, "] ", {"text": "抓牌", "color": "yellow"}]', lore=['{"text": "抓牌即放弃本回合出牌。", "color": "gray", "italic": false}']]
 function jkbg:games/uno/player/color/show
 
 # 记录卡牌数

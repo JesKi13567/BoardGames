@@ -10,4 +10,4 @@ execute as @p[scores={jkbg.uno.draw=1}] run function jkbg:games/uno/draw/on_play
 scoreboard players reset * jkbg.uno.draw
 
 # 下一位
-execute if score #uno.remain jkbg.int matches 0 if score #uno.state jkbg.int matches 2 if score #uno.cards.add jkbg.int matches 0 run function jkbg:games/uno/next
+execute if score #uno.state jkbg.int matches 2 if score #uno.cards.add jkbg.int matches 0 run function jkbg:games/uno/next
