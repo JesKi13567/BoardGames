@@ -1,1 +1,0 @@
-$give @s paper[custom_data={jkbg:["uno", "card"]}, custom_model_data=$(value), food={can_always_eat: true, eat_seconds: 100000, nutrition: 0, saturation: 0}, custom_name='[{"text": "UNO卡牌", "color": "white", "italic": false}]', lore=['[{"text": "[", "color": "white", "italic": false}, {"keybind": "key.use"}, "] 出牌"]']]
