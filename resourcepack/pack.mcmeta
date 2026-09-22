@@ -1,0 +1,18 @@
+{
+  "pack": {
+    "min_format": 75,
+    "max_format": 75,
+    "description": [
+      "",
+      {
+        "text": "Board Games",
+        "color": "gold"
+      },
+      "\nBy ",
+      {
+        "text": "JK137",
+        "color": "aqua"
+      }
+    ]
+  }
+}
