@@ -1,0 +1,10 @@
+# 牌数
+$execute store result score @s jkbg.uno.cards run data get storage jkbg:uno cards.id.$(mem)
+scoreboard players display numberformat @s jkbg.player.id fixed {score: {name: "@s", objective: "jkbg.uno.cards"}}
+
+# 重置分数
+$execute if score #uno.rule.end jkbg.int matches 0 run scoreboard players reset @p[scores={jkbg.player.id=$(mem)}] jkbg.uno.score
+
+# 卡牌全不见
+$execute as @e[type=item_display, tag=jkbg_uno_number, tag=$(mem)] unless entity @s[tag=wild] run data modify entity @s view_range set value 0
+$execute as @e[type=item_display, tag=jkbg_uno_number, tag=$(mem)] unless entity @s[tag=wild] run data modify entity @s item.components.minecraft:item_model set value "jkbg:uno/500"

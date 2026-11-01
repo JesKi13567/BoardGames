@@ -1,5 +1,4 @@
-# 桌面游戏 JK's BoardGames
-## MC1.21.11
-反正没正式发布，那版本号也不存在咯。
+# 桌游 JK's Board Games
+## v-unknown for MC26.3
 ### 游戏列表
 1. UNO
